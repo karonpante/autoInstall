@@ -1,0 +1,32 @@
+# Timezone Settings
+{timezone}
+
+# User Settings
+auth --useshadow --passalgo=sha512
+{rootpassword}
+{users}
+
+# Enable and Disable following services
+{services}
+
+# Enable or Disable Firewall
+{firewall}
+
+# Enable or Disable SELinux
+{selinux}
+
+# Install X environment or not?
+{X}
+
+# Prepare disk
+zerombr
+bootloader --location=mbr
+clearpart --all --initlabel
+# Create Partitions
+{partitions}
+# Create LVM volumes
+{logvols}
+
+# Reboot server when install is done
+reboot
+

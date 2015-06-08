@@ -1,0 +1,16 @@
+#########
+# Created by Descartes Auto Config Tool
+#########
+{name}
+{device}
+{mac}
+TYPE=Ethernet
+BOOTPROTO=none
+{ip}
+{mask}
+{gateway}
+IPV6INIT=no
+ONBOOT=yes
+NM_CONTROLLED=no
+PEERDNS=no
+{bond}

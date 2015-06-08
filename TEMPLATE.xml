@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<data>
+    <general>
+        <hostname>KPETEST</hostname>
+        <os>oel65</os>
+        <type>base</type>
+        <rootsshlogin>no</rootsshlogin>
+    </general>
+    <language>
+        <language>en_US.UTF-8</language>
+        <keyboard>be-latin1</keyboard>
+    </language>
+    <users>
+        <rootpassword>$6$gTCvU72FIxBV82OI$B30jlDuRnCGdivJGAcA7f862aooabu5PeZhQR1vqtadCfF0NLlMyy9HzS0A1VEii7bbTWNtUZ74tIDDA7i9kD1</rootpassword>
+        <user password="$6$pAN/ZJtORrJWfO2t$1NIT50UJQNlz/q.1RrqMZ0RRHzLbHCmWU0U1/V/hpal34NRCP.0TBir0Zee0JR82j.vAor1.VmOgIBSlo1KwB0">dsgadmin</user>
+    </users>
+    <network>
+        <interfaces>
+                <interface name="BackupInstall">
+                        <mac>000c29719f25</mac>
+                        <ip>10.120.32.200</ip>
+                        <mask>255.255.240.0</mask>
+                        <vlan>941</vlan>
+                </interface>
+                <interface name="OracleProd">
+                        <mac>005056a77280</mac>
+                        <bond>bond0</bond>
+                </interface>
+                <bond name='bond0' miimon='100' mode='1'>
+                        <ip>10.62.16.200</ip>
+                        <mask>255.255.255.0</mask>
+                        <gateway>10.62.16.1</gateway>
+                        <vlan>316</vlan>
+                </bond>
+        </interfaces>
+        <dns>
+            <domain>descartes.lab</domain>
+            <dnsserver>10.1.120.12</dnsserver>
+        </dns>
+    </network>
+    <time>
+        <timezone>Europe/Brussels</timezone>
+        <ntp>
+            <ntpserver>ntp.descartes.lab</ntpserver>
+        </ntp>
+    </time>
+    <packages>
+        <X>no</X>
+        <package>@Base</package>
+        <package>net-snmp</package>
+        <package>@network-file-system-client</package>
+    </packages>
+    <services>
+        <firewall>disabled</firewall>
+        <selinux>disabled</selinux>
+        <service state="disabled">postfix</service>
+        <service state="enabled">ntpd</service>
+        <service state="enabled">snmpd</service>
+    </services>
+    <storage>
+        <volume type="partition" size="200" fs="ext2">/boot</volume>
+        <volume type="logical" size="recommended" maxsize="2048" fs="swap">swap</volume>
+        <volume type="logical" size="2048" fs="ext4">/</volume>
+        <volume type="logical" size="3072" fs="ext4">/usr</volume>
+        <volume type="logical" size="2048" fs="ext4">/var</volume>
+        <volume type="logical" size="2048" fs="ext4">/var/log</volume>
+        <volume type="logical" size="2048" fs="ext4" fsoptions="defaults,nodev,nosuid,noexec">/tmp</volume>
+        <volume type="logical" size="1024" fs="ext4">/opt</volume>
+        <volume type="logical" size="1024" fs="ext4">/home</volume>
+    </storage>
+</data>
